@@ -27,6 +27,7 @@ class DeleteExpiredFiles extends Command
      */
     public function handle()
     {
+         Log::info("Deleted expired files! EEEEE! MAIN");
         $expiredFiles = File::where('expires_at', '<', now())->get();
 
         foreach ($expiredFiles as $file) {
